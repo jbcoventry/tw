@@ -2,19 +2,12 @@ export default {
   async fetch(request, env) {
     const kv = env.kv;
 
-
     if (request.method === "POST") {
       return handlePOSTRequest();
     } else if (request.method === "GET") {
       return handleGETRequest();
     } else if (request.method === "OPTIONS") {
-      return new Response("The request was an OPTIONS", {
-        headers: {
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "*",
-          "Access-Control-Allow-Headers": "*",
-        },
-      });
+      return new Response("The request was an OPTIONS");
     } else {
       return new Response("The request was not a GET or a POST");
     }
@@ -25,10 +18,7 @@ export default {
       return new Response(reqBody, {
         headers: {
           "content-type": "application/json;charset=UTF-8",
-          "Access-Control-Allow-Origin": "*",
-          "Access-Control-Allow-Methods": "POST, GET, OPTIONS",
         },
-        
       });
     }
     async function handleGETRequest() {
@@ -39,11 +29,8 @@ export default {
       return new Response(json, {
         headers: {
           "content-type": "application/json;charset=UTF-8",
-          "Access-Control-Allow-Origin": "*",
         },
       });
     }
   },
 };
-
-// create a response that returns headers allowing all origins to an OPTIONS request

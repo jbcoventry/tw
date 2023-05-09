@@ -4,4 +4,6 @@ compatibility_date = "2023-05-05"
 kv_namespaces = [
     { binding = "kv", id = "925e5e65e638459bb69c474c5e46a472", preview_id="925e5e65e638459bb69c474c5e46a472" }
 ]
+
+[env.production]
 route = "*apitest.jbcov.com/api*"

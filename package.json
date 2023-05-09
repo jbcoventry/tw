@@ -8,8 +8,7 @@
   "scripts": {
     "start": "wrangler dev",
     "dev": "wrangler dev",
-    "deploy": "wrangler publish"
-
+    "deploy": "wrangler publish --env production"
   },
-  "prettier":{}
+  "prettier": {}
 }
