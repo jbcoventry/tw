@@ -7,3 +7,9 @@ kv_namespaces = [
 
 [env.production]
 route = "*apitest.jbcov.com/api*"
+
+# [triggers]
+# crons = ["* * * * *"]
+
+# Secret Keys:
+# ApifyToken
